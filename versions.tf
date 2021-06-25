@@ -32,5 +32,13 @@ terraform {
   }
 
   required_version = "> 0.14"
+  
+  backend "s3" {
+    bucket = "learnk8s-with-terraform"
+    key    = "terraform.tfstate"
+    region = "ap-south-1"
+    #  encrypt        = true
+    dynamodb_table = "fleetman-app-with-terraform"
+  }
 }
 
